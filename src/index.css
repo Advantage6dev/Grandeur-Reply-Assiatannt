@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;700&family=Grand+Hotel&display=swap');
+
+:root {
+  /* your brand variables, unchanged */
+  --clr-primary: #ff6600;
+  --clr-secoundary: #a50021;
+  --clr-black: black;
+  --clr-white: #fff;
+  --background-clr: #8b00001a;
+  --ff-primary: 'Catamaran', sans-serif;
+  --ff-secoundary: 'Grand Hotel', cursive;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  /* added for the reply assistant */
+  --clr-primary-dark: #c2410c; /* orange that is readable as small text on white */
+  --clr-secoundary-dark: #7d0019; /* hover state for the red button */
+  --clr-cream: #fff7f0; /* page background */
+  --clr-ink: #3b0a12; /* main text */
+  --clr-ink-soft: #6b4a45; /* supporting text */
+  --clr-line: #e6d3c8; /* borders and input outlines */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ff-primary);
+  color: var(--clr-ink);
+  background: var(--clr-cream);
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 3px solid var(--clr-primary);
+  outline-offset: 2px;
+}
+
+/* ---------- app shell: exactly one screen tall on big screens ---------- */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__main {
+  flex: 1;
+  min-height: 0;
+}
+
+@media (min-width: 900px) {
+  .app {
+    height: 100dvh;
+    overflow: hidden;
+  }
+}
+
+.card__or {
+  position: relative;
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--clr-ink-soft);
+}
+
+.card__or::before {
+  content: '';
+  position: absolute;
+  inset: 50% 0 auto 0;
+  border-top: 1px solid var(--clr-line);
+}
+
+.card__or span {
+  position: relative;
+  padding: 0 0.75rem;
+  background: var(--clr-white);
+}
+
+.card__note {
+  margin: 0.75rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--clr-ink-soft);
+}

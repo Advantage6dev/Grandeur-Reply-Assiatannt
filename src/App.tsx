@@ -1,15 +1,11 @@
-import { useState } from 'react';
+import Navbar from './components/navbar.tsx';
+import LandingPage from './components/landingpage.tsx';
 
-import './App.css';
-
-function App() {
+export default function App() {
   return (
     <>
-      <section id='center'>
-        <h1>Vite + React</h1>
-      </section>
+      <Navbar />
+      <LandingPage />
     </>
   );
 }
-
-export default App;
