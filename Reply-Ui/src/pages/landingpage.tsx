@@ -1,5 +1,5 @@
 import { useState, type SyntheticEvent } from 'react';
-import './LandingPage.css';
+import './landingPage.css';
 
 type LandingPageProps = {
   onLogin?: (email: string, password: string) => void;

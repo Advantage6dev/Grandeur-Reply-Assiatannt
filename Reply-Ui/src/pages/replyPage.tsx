@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { generateReply, type ReplyResult } from '../api/generateReply';
-import './ReplyPage.css';
+import './replyPage.css';
 
 const naira = new Intl.NumberFormat('en-NG', {
   style: 'currency',

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './Navbar.css';
+import './navbar.css';
 
 type NavbarProps = {
   mode?: 'demo' | 'owner'; // undefined = not logged in
