@@ -1,0 +1,87 @@
+:root {
+  --clr-badge-bg: #ffe9d4;
+  --clr-badge-text: #7c2d12;
+}
+
+.navbar {
+  height: 3rem;
+  flex: none;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.25rem;
+  background: var(--clr-white);
+  border-bottom: 1px solid var(--clr-line);
+}
+
+.navbar__brand {
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar__brand-a {
+  color: var(--clr-primary);
+}
+
+.navbar__brand-b {
+  color: var(--clr-secoundary);
+}
+
+.navbar__tag {
+  display: none; /* hidden on mobile */
+  color: var(--clr-secoundary);
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__badge {
+  display: none; /* phones show the badge inside the page instead */
+  padding: 0.2rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--clr-badge-text);
+  background: var(--clr-badge-bg);
+  border-radius: 99px;
+}
+
+.navbar__logout {
+  padding: 0.4rem 0;
+  font: inherit;
+  color: var(--clr-secoundary);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.navbar__logout:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .navbar__tag {
+    display: block;
+  }
+
+  .navbar__badge {
+    display: inline;
+  }
+}
+
+@media (min-width: 900px) {
+  .navbar {
+    padding: 0 2.5rem;
+    height: 4rem;
+  }
+
+  .navbar__brand {
+    font-size: 1.2rem;
+  }
+}

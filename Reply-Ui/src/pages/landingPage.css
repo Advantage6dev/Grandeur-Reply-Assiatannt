@@ -62,10 +62,6 @@
   display: none;
 }
 
-button:hover {
-  transform: translateY(-2px);
-}
-
 /* ---------- steps ---------- */
 .steps {
   grid-area: steps;
@@ -180,12 +176,12 @@ button:hover {
 @media (min-width: 900px) {
   .landing {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
     grid-template-areas: none;
     align-items: center;
     column-gap: 3.5rem;
-    padding: 1.5rem 2.5rem;
+    padding: 2.5rem 2.5rem;
     overflow-y: auto; /* safety net on very short screens */
-    margin-top: 3rem;
   }
 
   .landing__copy {

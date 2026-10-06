@@ -1,0 +1,217 @@
+/* ---------- phone first: stacked cards, page can scroll ---------- */
+.reply {
+  flex: 1;
+  min-height: 0;
+  width: min(100%, 72rem);
+  margin-inline: auto;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  align-content: start;
+}
+
+.reply__demo {
+  justify-self: start;
+  margin: 0;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.9rem;
+  color: var(--clr-badge-text);
+  background: var(--clr-badge-bg);
+  border-radius: 99px;
+}
+
+.panel {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: var(--clr-white);
+  border: 1.5px solid var(--clr-line);
+  border-radius: 1.25rem;
+}
+
+.panel__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+}
+
+.panel__title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--clr-ink);
+}
+
+.panel__hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--clr-ink-soft);
+}
+
+.panel__text {
+  flex: 1;
+  width: 100%;
+  min-height: 9rem;
+  padding: 0.75rem 1rem;
+  font: inherit;
+  line-height: 1.6;
+  color: var(--clr-ink);
+  background: var(--clr-white);
+  border: 1.5px solid var(--clr-line);
+  border-radius: 0.75rem;
+  resize: none;
+}
+
+.panel__text::placeholder {
+  color: #8c7770;
+}
+
+.panel__text:hover {
+  border-color: var(--clr-ink-soft);
+}
+
+.panel__error {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--clr-secoundary);
+}
+
+.panel__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* ---------- total strip ---------- */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--clr-ink-soft);
+  background: var(--clr-cream);
+  border-radius: 0.75rem;
+}
+
+.summary strong {
+  flex: none;
+  font-weight: 500;
+  color: var(--clr-ink);
+}
+
+/* ---------- buttons ---------- */
+.rbtn {
+  flex: 1;
+  height: 3rem;
+  padding: 0 1rem;
+  font: inherit;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.rbtn--primary {
+  color: var(--clr-white);
+  background: var(--clr-secoundary);
+  border: 1px solid var(--clr-secoundary);
+}
+
+.rbtn--primary:hover {
+  background: var(--clr-secoundary-dark);
+  border-color: var(--clr-secoundary-dark);
+}
+
+.rbtn--outline {
+  color: var(--clr-primary-dark);
+  background: var(--clr-white);
+  border: 1.5px solid var(--clr-primary);
+}
+
+.rbtn--outline:hover {
+  color: var(--clr-white);
+  background: var(--clr-primary);
+}
+
+.rlink {
+  padding: 0.5rem;
+  font: inherit;
+  color: var(--clr-ink-soft);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.rlink:hover {
+  color: var(--clr-ink);
+  text-decoration: underline;
+}
+
+@media (max-width: 899px) {
+  .panel--reply .panel__text {
+    flex: none;
+    min-height: 11rem;
+    overflow: hidden;
+    resize: none;
+  }
+}
+
+/* ---------- tablets and up: demo note moves into the navbar ---------- */
+@media (min-width: 640px) {
+  .reply__demo {
+    display: none;
+  }
+}
+
+/* ---------- laptop: small input on the left, big reply on the right ---------- */
+@media (min-width: 900px) {
+  .reply {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-rows: minmax(0, 1fr);
+    align-items: start;
+    align-content: stretch;
+    gap: 1.5rem;
+    padding: 2.5rem;
+  }
+
+  .panel {
+    padding: 1.5rem;
+  }
+
+  /* the input stays compact: it is only a place to paste */
+  .panel:not(.panel--reply) .panel__text {
+    flex: none;
+    height: 11rem;
+    min-height: 0;
+    resize: vertical;
+  }
+
+  /* the reply is the main result, so it fills the full height */
+  .panel--reply {
+    align-self: stretch;
+    background: var(--clr-white);
+  }
+
+  .panel--reply .panel__text {
+    min-height: 0;
+    overflow-y: auto;
+    font-size: 1.05rem;
+  }
+}
+
+.reply__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

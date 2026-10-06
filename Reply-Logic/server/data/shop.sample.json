@@ -1,0 +1,55 @@
+{
+  "shopName": "Grandeur's Treats & Beads",
+  "payment": "Sample Bank, Grandeur's Treats & Beads (demo account)",
+  "deliveryNote": "Delivery within Ibadan. Orders before 12pm are delivered the same day.",
+  "items": [
+    {
+      "id": "jollof-tray",
+      "name": "Jollof rice tray",
+      "price": 15000,
+      "available": true,
+      "description": "Party jollof rice, serves about 10"
+    },
+    {
+      "id": "fried-rice-tray",
+      "name": "Fried rice tray",
+      "price": 16000,
+      "available": true,
+      "description": "Fried rice with mixed vegetables, serves about 10"
+    },
+    {
+      "id": "small-chops-box",
+      "name": "Small chops box",
+      "price": 8000,
+      "available": true,
+      "description": "Puff puff, spring rolls, samosa and chicken wings"
+    },
+    {
+      "id": "waist-bead-blue-gold",
+      "name": "Blue and gold waist bead",
+      "price": 2500,
+      "available": true,
+      "description": "Handmade waist bead, 40 inches"
+    },
+    {
+      "id": "neck-bead",
+      "name": "Neck bead",
+      "price": 3500,
+      "available": true,
+      "description": "Handmade coral neck bead"
+    },
+    {
+      "id": "hand-bead",
+      "name": "Hand bead bracelet",
+      "price": 1800,
+      "available": false,
+      "description": "Handmade bead bracelet"
+    }
+  ],
+  "delivery": [
+    { "area": "Bodija", "fee": 1500 },
+    { "area": "Agodi", "fee": 1500 },
+    { "area": "Challenge", "fee": 2000 },
+    { "area": "Ring Road", "fee": 1800 }
+  ]
+}
